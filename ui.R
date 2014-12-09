@@ -8,6 +8,9 @@ shinyUI(fluidPage(
     sidebarPanel(
       h3("Information"),
       br(),br(),
+      'View the presentation ',
+      a(href="http://rpubs.com/natrot/47262",target="_blank","here."),
+      br(),br(),
       wellPanel(h4('Introduction'),
                 br(),
                 'This shiny app performs classification modeling on the R iris data set.',br(),br(),

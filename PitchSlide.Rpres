@@ -1,0 +1,49 @@
+Regression model on Iris data
+========================================================
+author: Nat Rot
+date: 2014-12-09
+transition: concave
+
+Intorduction
+========================================================
+
+![alt text](iris.jpg)
+
+Three different species of Iris
+
+<p class="fragment fade-in">1. setosa</p>
+<p class="fragment fade-in">2. versicolor</p>
+<p class="fragment fade-in">3. virginica</p>
+
+Summary of indicators used for model
+========================================================
+
+```{r, echo=FALSE}
+summary(iris[3:4])
+```
+
+
+Actual model
+========================================================
+
+```{r, echo=FALSE}
+library(rpart)
+rpart.iris <- rpart(Species ~. ,data = iris,  control = rpart.control(maxdepth = 4))
+
+library(party)
+library(partykit)
+rpart.plot <- as.party(rpart.iris)
+plot(rpart.plot)
+```
+
+Pros and Cons of this app
+====================================
+Advantages
+- Easy to understand
+- Fast
+- Accurate
+
+***
+Disadvantages
+- Ignore certain features
+- Over fitted on this data set
